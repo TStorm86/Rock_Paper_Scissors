@@ -4,10 +4,13 @@ function computerPlay(){
     return outcome;
 }
 
+
+
+
 function playRound(playerChoice, computerChoice){
   let result = '';
 
-  if (playerChoice ==="Rock"){
+  if (playerChoice ==="ROCK"){
       if(computerChoice === 'Paper'){
           result = 'You lose! Paper beats Rock';
       }else if(computerChoice === 'Scissors'){
@@ -15,7 +18,7 @@ function playRound(playerChoice, computerChoice){
       }else{
           result = "It's a tie";
       }
-  }else if(playerChoice ==="Paper"){
+  }else if(playerChoice ==="PAPER"){
       if(computerChoice === 'Scissors'){
           result = 'You lose! Scissors beats Paper';
       }else if(computerChoice === 'Rock'){
@@ -23,7 +26,7 @@ function playRound(playerChoice, computerChoice){
       }else{
           result = "It's a tie";
       }
-  }else if(playerChoice === 'Scissors'){
+  }else if(playerChoice === 'SCISSORS'){
       if(computerChoice === 'Rock'){
           result = 'You lose! Rock beats Scissors';
       }else if(computerChoice === 'Paper'){
@@ -31,12 +34,14 @@ function playRound(playerChoice, computerChoice){
       }else{
           result = "It's a tie";
       }
+  }else{
+      result = 'Invalid choice';
   }
 
   return result;
 
 }
 
-const playerChoice = 'Rock';
-const computerChoice = computerPlay();
-console.log(playRound(playerChoice, computerChoice));
+ playerChoice = prompt("Enter choice:", "").toUpperCase();
+ computerChoice = computerPlay();
+console.log(playRound(playerChoice, computerChoice));   
