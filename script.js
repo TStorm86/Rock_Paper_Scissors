@@ -20,12 +20,15 @@ function playRound(round){
 
 
 function playerChoice(){
+
     let input = prompt("Enter your option");
+
     while(input == null){
         input = prompt("Please enter a valid option");
     }
     input = (input.toLowerCase()).trim();
     let check = validateInput(input);
+
     while (check == false){
         input = prompt("Check Spelling, Capitalization doesn't matter");
         while(input == null){
@@ -76,6 +79,16 @@ function recordWins(){
    console.log("Player wins:", playerWins);
    console.log("Computer wins:", computerWins);
    console.log("Ties:", ties);
+   console.log("------------------------------");
+
+   if(playerWins == computerWins){
+        console.log("Draw game, Play another round");
+    }else if(playerWins > computerWins){
+        console.log("Game Over, Player Won");
+    }else{
+        console.log("Game Over, Computer Won");
+}
+
 }
 
 function logRound(playerChoice, computerChoice, winner, round){
@@ -84,11 +97,11 @@ function logRound(playerChoice, computerChoice, winner, round){
     console.log("Computer chose:", computerChoice);
     
         if (winner === "Its a tie"){
-            console.log("The round ended in a Tie")
+            console.log("The round ended in a Tie");
         }else{
             console.log(winner, "Won this round");
         }
-    console.log("......................................")
+    console.log("------------------------------");
 }
 
 
