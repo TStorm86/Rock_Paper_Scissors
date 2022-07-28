@@ -47,11 +47,7 @@ function computerChoice(){
 
 
 function validateInput(choice){
-    if (choices.includes(choice)){
-        return true;
-    }else{
-        return false;
-    }
+    return choices.includes(choice);
 }
 
 
